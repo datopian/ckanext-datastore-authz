@@ -1,0 +1,6 @@
+include README.rst
+include LICENSE
+include requirements.txt
+recursive-include ckanext/datastore_authz *.html *.json *.js *.less *.css *.mo *.yml
+recursive-include ckanext/datastore_authz/migration *.ini *.py *.mako
+recursive-include ckanext/datastore_authz/public *.*

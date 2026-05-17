@@ -1,0 +1,14 @@
+# datastore_authz-js:
+#   filter: rjsmin
+#   output: ckanext-datastore_authz/%(version)s-datastore_authz.js
+#   contents:
+#     - js/datastore_authz.js
+#   extra:
+#     preload:
+#       - base/main
+
+# datastore_authz-css:
+#   filter: cssrewrite
+#   output: ckanext-datastore_authz/%(version)s-datastore_authz.css
+#   contents:
+#     - css/datastore_authz.css
