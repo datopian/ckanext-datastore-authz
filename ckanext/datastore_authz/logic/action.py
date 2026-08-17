@@ -1,6 +1,5 @@
 import ckan.plugins.toolkit as tk
 
-
 PERMISSION_AUTH = {
     "read": "resource_show",
     "create": "resource_create",
@@ -39,8 +38,10 @@ def datastore_authorize(context, data_dict):
 
     tk.check_access(auth_name, context, {"id": resource_id})
     resource = tk.get_action("resource_show")(context, {"id": resource_id})
-    package = tk.get_action("package_show")(
-        context, {"id": resource["package_id"]}
-    )
+    package = tk.get_action("package_show")(context, {"id": resource["package_id"]})
     package.pop("resources", None)
-    return {"package": package, "resource": resource}
+    return {
+        "package": package,
+        "resource": resource,
+        "user": context.get("user"),
+    }
